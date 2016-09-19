@@ -1,0 +1,10 @@
+extends ./layout.jade
+
+block contenido
+	form(action="/users",method="POST")
+		div(class="form-group")
+			label(for="email") Email
+			input(type="text" ,name="email",placeholder="Email",id="email" class="form-control")
+		div(class="form-group")
+			label(for="password") Password
+			input(type="password" ,name="password",placeholder="Email",id="password" class="form-control") 
