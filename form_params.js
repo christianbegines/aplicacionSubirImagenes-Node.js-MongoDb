@@ -18,7 +18,6 @@ http.createServer(function(request,response){
         var parametros=parser.parse(request);         
         response.writeHead(200,{"Content-Type":"text/html"});
         response.write(render.render(html,parametros));
-        response.end();
-    });    
+        response.end(); });    
 }).listen(8080);
 
