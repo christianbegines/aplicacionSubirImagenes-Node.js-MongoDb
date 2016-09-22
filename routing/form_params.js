@@ -13,8 +13,10 @@ var render=require("./render_view.js");
 http.createServer(function(request,response){
      if(request.url.indexOf("favicon.ico")>0){
             return;
-        } 
-        //lee el html
+
+        }  
+        //lee
+
     fs.readFile("./index.html",function(error,html){      
         var parametros=parser.parse(request);         
         response.writeHead(200,{"Content-Type":"text/html"});
