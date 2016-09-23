@@ -18,7 +18,7 @@ app.get("/login",function(request,response){
 	User.find(function(err,doc){
 		console.log(doc);
 		response.render("login");
-	})
+	});
 	
 });
 
