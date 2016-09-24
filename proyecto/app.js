@@ -14,25 +14,42 @@ app.set("view engine","jade");
 app.get("/",function(request,response){
 	response.render("index");
 });
-app.get("/login",function(request,response){
+app.get("/signup",function(request,response){
 	User.find(function(err,doc){
 		console.log(doc);
-		response.render("login");
+		response.render("signup");
 	})
 	
 });
 
+app.get("/login",function(request,response){
+	response.render("login");	
+});
+
 app.post("/users",function(request,response){
-	var user = new User({email: request.body.email, password: request.body.password,
-		password_confirmation: request.body.password_confirmation
+	var user = new User({
+						email: request.body.email, 
+						password: request.body.password,
+						password_confirmation: request.body.password_confirmation,
+						username: request.body.username
 	});
-	console.log(user.password_confirmation);
-	user.save(function(err){
+
+	user.save().then(function(us){
+		response.send("guardamos sus datos exitosamente");
+	},function(err){
 		if(err){
 			console.log(String(err));
+			response.send("No pudimos guardar la informacion");
 		}
-		response.send("Guardamos tus datos");
+	  
 	});
+		
+	
+	
+});
+
+app.post("/sessions",function(request,response){
+	
 		
 	
 	
