@@ -27,7 +27,10 @@ app.post("/users",function(request,response){
 		password_confirmation: request.body.password_confirmation
 	});
 	console.log(user.password_confirmation);
-	user.save(function(){
+	user.save(function(err){
+		if(err){
+			console.log(String(err));
+		}
 		response.send("Guardamos tus datos");
 	});
 		
