@@ -17,6 +17,7 @@ app.get("/",function(request,response){
 app.get("/signup",function(request,response){
 	User.find(function(err,doc){
 		console.log(doc);
+
 		response.render("signup");
 	})
 	
