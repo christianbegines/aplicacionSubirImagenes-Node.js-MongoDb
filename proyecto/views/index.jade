@@ -1,4 +1,14 @@
 extends ./layout.jade
+
+<!-- pagina de inicio -->
 block contenido
-	h1 Bienvendio a mi pagina con jade
-	a(href="/login") Iniciar sesion
+	link(rel='stylesheet', href='/public/css/style.css')
+	div
+		h1(class="titulo")  tuTiendaOnline
+	div
+		nav
+			button(class="btn" id="boton1")
+				a(href="/login") Iniciar sesion
+			
+			button(class="btn" id="boton2")
+				a(href="/signup") Registro
