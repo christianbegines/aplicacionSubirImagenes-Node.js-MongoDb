@@ -1,8 +1,16 @@
 {
-    "name": "curso_node",
-    "version": "1.0.0",
-    "keywords": ["util", "functional", "server", "client", "browser"],
-    "author": "chavo",
-    "contributors": [],
-    "dependencies": {}
+  "name": "curso_node",
+  "version": "1.0.0",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser"
+  ],
+  "author": "chavo",
+  "contributors": [],
+  "dependencies": {
+   
+  }
 }

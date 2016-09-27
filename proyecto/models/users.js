@@ -5,13 +5,11 @@ var Schema = mongoose.Schema;
 mongoose.connect("mongodb://localhost/fotos");
 var posibles_valores=["M","F"];
 var email_match=[/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,"Colocar un email"];
-var password_validation={
-	
+var password_validation={	
 			validator: function(p){
 				return this.password_c == p;
 			} ,
-			message: "Las contraseñas no son iguales"
-		
+			message: "Las contraseñas no son iguales"		
 }
 
 

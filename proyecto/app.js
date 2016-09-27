@@ -16,7 +16,6 @@ app.get("/",function(request,response){
 app.get("/signup",function(request,response){
 	User.find(function(err,doc){
 		console.log(doc);
-
 		response.render("signup");
 	})	
 });
@@ -28,23 +27,26 @@ app.get("/login",function(request,response){
 //devuelven las correspondientes paginas con su funcion
 app.post("/users",function(request,response){
 	var user = new User({
-						email: request.body.email, 
-						password: request.body.password,
-						password_confirmation: request.body.password_confirmation,
-						username: request.body.username
+						email:request.body.email, 
+						password:request.body.password,
+						password_confirmation:request.body.password_confirmation,
+						username:request.body.username
 	});
 	user.save().then(function(us){
 		response.send("guardamos sus datos exitosamente");
-	},function(err){
-		if(err){
+	},function(err){		
 			console.log(String(err));
-			response.send("No pudimos guardar la informacion");
-		}  
+			response.send("No pudimos guardar la informacion");		  
 	});	
 });
 
 app.post("/sessions",function(request,response){	
+	User.findOne({email:request.body.email,password:request.body.password},function(err,docs
+		){
+		console.log(docs);
+		response.send("Hola Chavo");
 
+		})
 });
 
 app.listen(8080);
