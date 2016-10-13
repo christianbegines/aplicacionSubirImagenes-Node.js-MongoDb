@@ -1,4 +1,27 @@
-.titulo,.boton{
+@font-face {
+	font-family:Oranienbaum;
+	src:url(Oranienbaum.ttf);
+}
+.fuente{
+	font-family:"Oranienbaum";
+}
+.texto-titulo{
 	text-align: center;
 
+
+}
+.boton{
+
+}
+.panel-central{
+	margin: 0 auto;
+	box-sizing: border-box;
+	text-align: center;
+}
+.boton{
+	text-decoration: none;
+	border-radius: 5px;
+  padding:5px 10px;
+	border:1px solid blue;
+	background-color:
 }

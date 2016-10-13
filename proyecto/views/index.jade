@@ -1,13 +1,11 @@
 extends ./layout.jade
 <!-- pagina de inicio -->
 block contenido
-	link(rel='stylesheet', href='/public/css/style.css')
 	div
-		h1(class="titulo")  tuTiendaOnline
-	div
-		nav
-			button(class="btn boton" )
+		h1(class="texto-titulo fuente") SoftWareBuild 
+	div(class="panel-central")		
+			button(class="boton boton-login fuente" )
 				a(href="/login") Iniciar sesion
 			
-			button(class="btn boton" )
+			button(class="boton boton-login fuente" )
 				a(href="/signup") Registro
