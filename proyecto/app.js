@@ -2,15 +2,22 @@ var express = require("express");
 var bodyParser=require("body-parser");
 var User=require("./models/users").User;
 var app=express();
+var session=require("express-session");
 //para utilizar el middleware de built-in
 app.use("/public",express.static('public'));
 app.use(bodyParser.json());//para peticiones tipo json
 app.use(bodyParser.urlencoded({extended:true}));//para parsear urls
+app.use(session({
+	secret:"123byuhbsdah12ub",
+	resave:false,
+	saveUninitialized:false
+}));
 //añade el jade
 app.set("view engine","jade");
 
 //recoge las peticiones de servidor
 app.get("/",function(request,response){
+	console.log(request.session.user_id);
 	response.render("index");
 });
 app.get("/signup",function(request,response){
@@ -41,10 +48,10 @@ app.post("/users",function(request,response){
 });
 
 app.post("/sessions",function(request,response){
-	User.findOne({email:request.body.email,password:request.body.password},function(err,docs
+	User.findOne({email:request.body.email,password:request.body.password},function(err,user
 		){
-		console.log(docs);
-		response.send("Se a logueado correctamente");
+		request.session.user_id=user._id;
+		response.send("logeado correctamente");
 
 		})
 });
