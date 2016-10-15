@@ -4,24 +4,56 @@
 }
 .fuente{
 	font-family:"Oranienbaum";
+	font-size: 150%;
+	color:white;
+}
+.fuente--grande{
+	font-size: 200%;
 }
 .texto-titulo{
 	text-align: center;
-
-
+	padding-top:30px;
+	padding-bottom: 30px;
+	padding-left: 30px;
+	box-sizing: border-box;
 }
-.boton{
-
+html{
+	background-image: url(http://dissenyaweb.com/blog/diseno_web/wp-content/uploads/christian-background-loops.jpg);
 }
-.panel-central{
+.panel-contenedor{
+	background-image: url(http://nickspezia.com/wp-content/uploads/2015/01/Elegant_Background-9.jpg);
+	opacity: 50%;
+}
+.boton{}
+.panel-central,.panel_login,.panel_registro{
 	margin: 0 auto;
 	box-sizing: border-box;
 	text-align: center;
+}
+.panel_login,.panel_registro{
+	padding-top: 150px;
 }
 .boton{
 	text-decoration: none;
 	border-radius: 5px;
   padding:5px 10px;
-	border:1px solid blue;
-	background-color:
+	border:1px solid #309496;
+	background-color:#105363;
+	outline: 0;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.boton:hover{
+	background-color:#177a91;
+}
+.fuente--link{
+	text-decoration: none;
+	color: white;
+}
+.panel-enviar_login,.panel-enviar_registration{
+	padding-top: 30px;
+}
+.panel-input_texto{
+ 	margin: 10px;
+	padding-right: 2px;
 }

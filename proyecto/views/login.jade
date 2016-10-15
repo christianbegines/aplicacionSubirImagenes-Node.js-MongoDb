@@ -2,11 +2,12 @@ extends ./layout.jade
 <!-- pagina de login -->
 block contenido
 	form(action="/sessions" method="POST")
-		div(class="form-group")
-			label(for="email") Email
-			input(type="text" ,name="email",placeholder="Email",id="email" class="form-control")
-		div(class="form-group")
-			label(for="password") Password
-			input(type="password" ,name="password",placeholder="password",id="password" class="form-control") 		
-		div
-			input(type="submit" value="Iniciar Sesion" class="btn btn-info")
+		div(class="panel_login")
+			div(class="panel_login-name")
+				label(class="fuente fuente--grande" for="email") Email
+				input(class="panel-input_texto" type="text" ,name="email",placeholder="Email",id="email" class="form-control")
+			div(class="panel_login-pass")
+				label(class="fuente fuente--grande" for="password") Password
+				input(class="panel-input_texto" type="password" ,name="password",placeholder="password",id="password" class="form-control") 		
+			div(class="panel-enviar_login")
+				input(type="submit" value="Iniciar Sesion" class="boton fuente")
