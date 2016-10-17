@@ -18,7 +18,7 @@ app.get("/signup",function(request,response){
 		console.log(doc);
 
 		response.render("signup");
-	})	
+	});	
 });
 
 app.get("/login",function(request,response){

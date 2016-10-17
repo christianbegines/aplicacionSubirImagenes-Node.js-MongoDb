@@ -1,8 +1,19 @@
 {
-    "name": "curso_node",
-    "version": "1.0.0",
-    "keywords": ["util", "functional", "server", "client", "browser"],
-    "author": "chavo",
-    "contributors": [],
-    "dependencies": {}
+  "name": "curso_node",
+  "version": "1.0.0",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser"
+  ],
+  "author": "chavo",
+  "contributors": [],
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "jade": "^1.11.0",
+    "mongoose": "^4.6.1"
+  }
 }
