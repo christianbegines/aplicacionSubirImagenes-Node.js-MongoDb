@@ -24,11 +24,9 @@ app.get("/signup",function(request,response){
 	User.find(function(err,doc){
 		console.log(doc);
 		response.render("signup");
-<<<<<<< HEAD
+
 	});	
-=======
-	})
->>>>>>> 20e7ba81a483275cad618b18ce159e67544c0b29
+
 });
 
 app.get("/login",function(request,response){
