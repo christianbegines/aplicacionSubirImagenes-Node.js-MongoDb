@@ -7,7 +7,6 @@ module.exports=function(request,response,next){
       if(err){
         console.log(err);
         response.redirect("/login");
-
       }else{
         response.locals={user:user};
         next();

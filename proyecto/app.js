@@ -1,10 +1,13 @@
 var express = require("express");
-var bodyParser=require("body-parser");
-var User=require("./models/users").User;
+var expressValidator=require("express-validator");
+var	bodyParser=require("body-parser");
+var  User=require("./models/users").User;
+var  session=require("express-session");
+var  router_app=require("./router_app");
+var  session_middleware=require("./middlewares/session");
+
 var app=express();
-var session=require("express-session");
-var router_app=require("./router_app");
-var session_middleware=require("./middlewares/session");
+app.use(expressValidator());
 //para utilizar el middleware de built-in
 app.use("/public",express.static('public'));
 app.use(bodyParser.json());//para peticiones tipo json
@@ -14,6 +17,7 @@ app.use(session({
 	resave:false,
 	saveUninitialized:false
 }));
+
 //añade el jade
 app.set("view engine","jade");
 
@@ -50,12 +54,22 @@ app.post("/users",function(request,response){
 });
 
 app.post("/sessions",function(request,response){
-	User.findOne({email:request.body.email,password:request.body.password},function(err,user
-		){
-		request.session.user_id=user._id;
-		response.redirect("/app");
+	request.assert('email','El campo email es requerido').notEmpty();
+	request.assert('password','El campo password es requerido').notEmpty();
 
-		})
+	var errors=request.validationErrors();
+	if(!errors){
+		User.findOne({email:request.body.email,password:request.body.password},function(err,user
+			){
+					request.session.user_id=user._id;
+					response.redirect("/app");
+			})
+	}else{
+		response.send("Algun campo vacio"
+
+		);
+	}
+
 });
 app.use("/app",session_middleware);
 app.use("/app",router_app);
