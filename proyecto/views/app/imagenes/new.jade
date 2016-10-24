@@ -1,0 +1,14 @@
+extends ../../layout.jade
+block contenido	
+  form(action="/imagenes" method="POST")
+    div(class="panel_login")
+      div(class="panel_login-name")
+        label(class="fuente fuente--grande" for="title") Titulo
+        input(class="panel-input_texto" type="text" ,name="title",placeholder="Introducza el titulo ...",id="title" class="form-control")
+      div(class="panel_login-pass")
+        label(class="fuente fuente--grande" for="archivo") Imagen        
+        input(class="panel-input_texto" type="file" ,name="archivo",id="archivo" class="form-control") 		
+      div(class="panel-enviar_login")       
+        input(type="submit" value="Subir imagen" class="boton fuente")
+      
+        
