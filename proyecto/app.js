@@ -3,6 +3,8 @@ var bodyParser=require("body-parser");
 var User=require("./models/users").User;
 var app=express();
 var session=require("express-session");
+var router_app=require("./router_app");
+var session_middleware=require("./middlewares/session");
 //para utilizar el middleware de built-in
 app.use("/public",express.static('public'));
 app.use(bodyParser.json());//para peticiones tipo json
@@ -51,9 +53,10 @@ app.post("/sessions",function(request,response){
 	User.findOne({email:request.body.email,password:request.body.password},function(err,user
 		){
 		request.session.user_id=user._id;
-		response.send("logeado correctamente");
+		response.redirect("/app");
 
 		})
 });
-
+app.use("/app",session_middleware);
+app.use("/app",router_app);
 app.listen(8080);
