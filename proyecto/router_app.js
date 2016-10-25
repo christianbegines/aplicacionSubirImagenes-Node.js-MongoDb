@@ -6,9 +6,8 @@ router.get("/",function(require,response){
   response.render("app/home")
 });
 /*REST*/
-
 router.get("/imagenes/new",function(request,response){
-  response.render("app/imagenes/new");
+    response.render("app/imagenes/new")
 });
 router.get("/imagenes/:id/edit",function(request,response){
 
@@ -23,13 +22,13 @@ router.route("/imagenes/:id")
   .delete(function(request,response){
 
   });
+  router.route("/imagenes")
+    .get(function(request,response){
 
-router.route("/imagenes")
-  .get(function(request,response){
+    })
+    .post(function(request,response){
 
-  })
-  .put(function(request,response){
+    });
 
-  });
 
 module.exports=router;
