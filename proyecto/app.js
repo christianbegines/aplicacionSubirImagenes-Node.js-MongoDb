@@ -3,7 +3,7 @@ var expressValidator=require("express-validator");
 var	bodyParser=require("body-parser");
 var  User=require("./models/users").User;
 var  session=require("express-session");
-var  router_app=require("./router_app");
+var  api_imagenes=require("./api_imagenes");
 var  session_middleware=require("./middlewares/session");
 
 var app=express();
@@ -31,7 +31,7 @@ app.get("/signup",function(request,response){
 		console.log(doc);
 		response.render("signup");
 
-	});	
+	});
 
 });
 
@@ -74,5 +74,5 @@ app.post("/sessions",function(request,response){
 
 });
 app.use("/app",session_middleware);
-app.use("/app",router_app);
+app.use("/app",api_imagenes);
 app.listen(8080);
