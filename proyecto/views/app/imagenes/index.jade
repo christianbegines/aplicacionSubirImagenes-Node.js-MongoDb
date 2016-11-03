@@ -1,11 +1,15 @@
 extends ../../layout.jade
 block contenido
-  div
+  link(rel='stylesheet',href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')  
+  div(class="container")
     for imagen in imagenes
-      .fuente.tr
+      .fuente.tr.elemento-lista.fuente.fuente--link
         .row
           .col-md-10
             h2=imagen.title
-          .col-md-2
-            a(href="/app/imagenes/#{imagen._id/editar}" class="fuente fuente--link")
-            a(href="/app/imagenes/#{imagen._id/eliminiar}" class="fuente fuente--link")
+          .col-md-2.margen-superior
+            a(href="/app/imagenes/#{imagen._id/editar}" class="fuente fuente--link fuente--small  right-space") Editar
+            a(href="/app/imagenes/#{imagen._id/eliminiar}" class="fuente fuente--link fuente--small  right-space") Eliminiar
+  div
+    button(class="boton boton--derecha")
+      a(href="/app/imagenes/new" class="fuente fuente--link fuente--grande ") Añadir imagen

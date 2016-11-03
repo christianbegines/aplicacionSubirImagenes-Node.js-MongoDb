@@ -5,6 +5,11 @@ html(lang="es")
 		meta(charset="utf-8")
 		link(rel='stylesheet',href='/public/css/style.css')
 		link(rel='stylesheet',href='/public/css/reset.css')
-		link(rel='stylesheet',href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
 	body
+		nav(class="menu")
+			ul
+				li(class="menu-principal-item")
+					a(class="fuente--link fuente menu-principal--contenido" href="/app") Inicio
+				li(class="menu-principal-item")
+					a(class="fuente--link fuente menu-principal--contenido" href="/app/imagenes") Mis Imagenes
 		block contenido
