@@ -3,19 +3,19 @@ extends ./layout.jade
 block contenido	
 	form(action="/users" method="POST")
 		div(class="panel_registro")
-				div(class="form-group")
+				div
 						label(class="fuente fuente--grande" for="email") Email
 						input(class="panel-input_texto" type="text" ,name="email",placeholder="Email",id="email")
-				div(class="form-group")
+				div
 						label(class="fuente fuente--grande" for="password") Password
 						input(class="panel-input_texto" type="password" ,name="password",placeholder="paasword",id="password" ) 
-				div(class="form-group" )
+				div
 						label(class="fuente fuente--grande" for="password") Confirmar Password
 						input(class="panel-input_texto" type="password" ,name="password_confirmation",placeholder="password confirmation",id="password_confirmation")
-				div(class="form-group")
+				div
 						label(class="fuente fuente--grande" for="username") Username
 						input(class="panel-input_texto" type="text" ,name="username",placeholder="Nombre de usuario",id="username" )
-				div(class="form-group")
+				div
 					div
 						input(class="boton  fuente fuente--link" type="submit" value="Registrarse")
 					div
