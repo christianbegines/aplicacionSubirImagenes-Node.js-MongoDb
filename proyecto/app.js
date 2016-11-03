@@ -2,7 +2,7 @@ var express = require("express");
 var expressValidator=require("express-validator");
 var	bodyParser=require("body-parser");
 var  User=require("./models/users").User;
-var  session=require("express-session");
+var  cookieSession=require("cookie-session");
 var  api_imagenes=require("./api_imagenes");
 var  session_middleware=require("./middlewares/session");
 
@@ -12,10 +12,9 @@ app.use(expressValidator());
 app.use("/public",express.static('public'));
 app.use(bodyParser.json());//para peticiones tipo json
 app.use(bodyParser.urlencoded({extended:true}));//para parsear urls
-app.use(session({
-	secret:"123byuhbsdah12ub",
-	resave:false,
-	saveUninitialized:false
+app.use(cookieSession({
+	name:"session",
+	keys:["llave-1","llave-2"]
 }));
 
 //añade el jade
@@ -67,9 +66,7 @@ app.post("/sessions",function(request,response){
 					response.redirect("/app");
 			})
 	}else{
-		response.send("Algun campo vacio"
-
-		);
+		response.send("Algun campo vacio");
 	}
 
 });

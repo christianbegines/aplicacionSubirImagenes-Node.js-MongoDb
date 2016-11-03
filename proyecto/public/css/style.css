@@ -28,7 +28,23 @@ html{
 	background-image: url(fondoBarra.png);
 	opacity: 50%;
 }
-.boton{}
+.menu{
+ float:none;
+ text-align: right;
+ background-image: url(fondoBarra.png);
+ padding: 10px 15px;
+
+}
+.menu-principal-item{
+	display: inline-block;
+	margin-right:1em;
+}
+.menu-principal--contenido{
+
+}
+.boton{
+
+}
 .panel-central,.panel_login,.panel_registro{
 	margin: 0 auto;
 	box-sizing: border-box;
@@ -44,11 +60,12 @@ html{
 	border:1px solid #309496;
 	background-color:#105363;
 	outline: 0;
- -webkit-transition-duration: 0.4s;
- transition-duration: 0.4s;
+
 }
 .boton:hover{
 	background-color:#177a91;
+	-webkit-transition-duration: 0.4s;
+ 	transition-duration: 0.4s;
 }
 .fuente--link{
 	text-decoration: none;

@@ -1,3 +1,8 @@
 extends ../layout.jade
 block contenido
-  div Has sido redirigido correctamente, estas logeado como #{user.email}
+  nav(class="menu")
+    ul
+      li(class="menu-principal-item")
+        a(class="fuente--link fuente menu-principal--contenido" href="/app") Inicio
+      li(class="menu-principal-item")
+        a(class="fuente--link fuente menu-principal--contenido" href="/app/imagenes") Mis Imagenes
