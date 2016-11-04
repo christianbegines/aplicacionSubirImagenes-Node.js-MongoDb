@@ -66,7 +66,8 @@ app.post("/sessions",function(request,response){
 					response.redirect("/app");
 			})
 	}else{
-		response.send("Algun campo vacio");
+
+		response.sendStatus(500);
 	}
 
 });
