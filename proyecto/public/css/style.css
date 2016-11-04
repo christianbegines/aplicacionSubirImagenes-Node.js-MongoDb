@@ -44,8 +44,7 @@ html{
 	border:1px solid #309496;
 	background-color:#105363;
 	outline: 0;
- -webkit-transition-duration: 0.4s;
- transition-duration: 0.4s;
+ 
 }
 .boton:hover{
 	background-color:#177a91;
