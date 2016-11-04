@@ -10,6 +10,10 @@
 .fuente--grande{
 	font-size: 200%;
 }
+.fuente--small{
+	font-size: 80%;
+}
+
 .texto-titulo{
 	text-align: center;
 	padding-top:30px;
@@ -17,7 +21,7 @@
 	padding-left: 30px;
 	box-sizing: border-box;
 }
-html{
+body{
 /*	background-image: url(http://dissenyaweb.com/blog/diseno_web/wp-content/uploads/christian-background-loops.jpg);
 */
 		background-image: url(fondoPrincipal.png);
@@ -28,7 +32,39 @@ html{
 	background-image: url(fondoBarra.png);
 	opacity: 50%;
 }
-.boton{}
+.menu{
+ float:none;
+ text-align: right;
+ background-image: url(fondoBarra.png);
+ padding: 10px 15px;
+
+}
+.menu-principal-item{
+	display: inline-block;
+	margin-right:1em;
+}
+.menu-principal--contenido{
+
+}
+.elemento-lista{
+	border:solid 1px #178993;
+	border-radius: 2px;
+	margin-top:1em;
+	background:rgba(38,191,183,0.5);
+}
+.right-space{
+	margin-right: 1em;
+
+}
+.margen-superior{
+	margin-top: 2em;
+}
+.row{
+	display: block;
+}
+.boton{
+
+}
 .panel-central,.panel_login,.panel_registro{
 	margin: 0 auto;
 	box-sizing: border-box;
@@ -44,12 +80,22 @@ html{
 	border:1px solid #309496;
 	background-color:#105363;
 	outline: 0;
- 
 }
 .boton:hover{
 	background-color:#177a91;
+	-webkit-transition-duration: 0.4s;
+ 	transition-duration: 0.4s;
 }
 .fuente--link{
+	text-decoration: none;
+	color: white;
+}
+.boton--derecha{
+	float:right;
+	margin-right: 15px;
+	margin-top: 2em;
+}
+.fuente--link:hover{
 	text-decoration: none;
 	color: white;
 }
